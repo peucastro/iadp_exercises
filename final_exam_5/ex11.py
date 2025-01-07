@@ -7,8 +7,7 @@ df = pd.read_csv("usa_real_estate1.csv", sep=";", parse_dates=["sold_date"])
 
 def solve():
     aux = df.sort_values("price", ascending=False)
-    city = aux.iloc[0, 5]
-    print(city)
+    print(aux.iloc[0, 5])
 
 
 solve()

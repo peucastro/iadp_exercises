@@ -6,11 +6,7 @@ df = pd.read_csv("usa_real_estate1.csv", sep=";", parse_dates=["sold_date"])
 
 
 def solve():
-    df_houses_count = df.shape[0]
-    aux = df.loc[df["house_size"] > 2000]
-    aux_houses_count = aux.shape[0]
-    ans = aux_houses_count / df_houses_count * 100
-    print(f"{ans:.1f}")
+    print(f"{(df.loc[df["house_size"] > 2000].shape[0] / df.shape[0] * 100):.1f}")
 
 
 solve()

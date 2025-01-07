@@ -6,9 +6,8 @@ df = pd.read_csv("usa_real_estate1.csv", sep=";", parse_dates=["sold_date"])
 
 
 def solve():
-    global df
-    df.at[2, "status"] = "sold"
-    df.at[2, "price"] = 60000
+    df.loc[2, "status"] = "sold"
+    df.loc[2, "price"] = 60000
 
 
 solve()
