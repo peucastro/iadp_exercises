@@ -10,3 +10,4 @@ def solve():
 
 
 solve()
+print(df.loc[:, "Invoice ID":"Gender"].head(3))

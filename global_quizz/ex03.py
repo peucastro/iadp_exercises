@@ -11,3 +11,4 @@ def solve():
 
 
 solve()
+print(df.loc[:, "Invoice ID":"Product line"].head(3))
