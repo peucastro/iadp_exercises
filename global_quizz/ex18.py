@@ -8,20 +8,18 @@ Print the columns 'customer type' to 'Unit price' of the rows where the 'Custome
 
 
 def solve():
-    filtered_df = df[
-        (
-            (df["Customer type"] == "Member")
-            & (df["Gender"] == "Male")
-            & (df["Unit price"] > 99)
-        )
-        | (
-            (df["Customer type"] == "Normal")
-            & (df["Gender"] == "Female")
-            & (df["Unit price"] > 99)
-        )
-    ]
-    result = filtered_df[["Customer type", "Gender", "Product line", "Unit price"]]
-    print(result)
+    print(
+        df.loc[
+            (
+                (
+                    ((df["Customer type"] == "Member") & (df["Gender"] == "Male"))
+                    | ((df["Customer type"] == "Normal") & (df["Gender"] == "Female"))
+                )
+                & (df["Unit price"] > 99)
+            ),
+            "Customer type":"Unit price",
+        ]
+    )
 
 
 solve()

@@ -6,7 +6,7 @@ df = pd.read_csv("supermarket1.csv", sep=";")
 
 
 def solve():
-    print(df.loc[(df["Total"] > 1030), ["Product line", "Total"]])
+    print(df.loc[df["Total"] > 1030, "Product line":"Total"])
 
 
 solve()
