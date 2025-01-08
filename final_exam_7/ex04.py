@@ -6,8 +6,12 @@ df = pd.read_csv("f1_1.csv", encoding="utf-8", parse_dates=["dob", "date"])
 
 
 def solve():
-    aux = df.sort_values("fastest_lap_speed", ascending=False)
-    print(aux[["name", "race", "fastest_lap_speed"]].head(1).round(1))
+    print(
+        df.loc[
+            df["fastest_lap_speed"] == df["fastest_lap_speed"].max(),
+            ["name", "race", "fastest_lap_speed"],
+        ].round(1)
+    )
 
 
 solve()

@@ -6,8 +6,7 @@ df = pd.read_csv("f1_1.csv", encoding="utf-8", parse_dates=["dob", "date"])
 
 
 def solve():
-    aux = df.loc[(df["year"] == 2021) & (df["position"] == 1)]
-    print(aux.loc[:, "name":"year"])
+    print(df.loc[(df["year"] == 2021) & (df["position"] == 1), "name":"year"])
 
 
 solve()

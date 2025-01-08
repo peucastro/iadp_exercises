@@ -6,11 +6,13 @@ df = pd.read_csv("f1_1.csv", encoding="utf-8", parse_dates=["dob", "date"])
 
 
 def solve():
-    aux = df.loc[
-        ((df["year"] == 2018) & (df["position"] == 1))
-        | ((df["year"] == 2019) & (df["position"] == 2))
-    ]
-    print(aux.loc[:, "name":"year"])
+    print(
+        df.loc[
+            ((df["year"] == 2018) & (df["position"] == 1))
+            | ((df["year"] == 2019) & (df["position"] == 2)),
+            "name":"year",
+        ]
+    )
 
 
 solve()
