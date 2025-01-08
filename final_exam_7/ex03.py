@@ -6,9 +6,7 @@ df = pd.read_csv("f1_1.csv", encoding="utf-8", parse_dates=["dob", "date"])
 
 
 def solve():
-    df.drop("code", axis=1, inplace=True)
-    df.drop("fastest_lap_speed", axis=1, inplace=True)
-    df.drop("race", axis=1, inplace=True)
+    df.drop(["code", "fastest_lap_speed", "race"], axis=1, inplace=True)
 
 
 solve()
